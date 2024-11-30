@@ -1,0 +1,22 @@
+# This is a sample deployment manifest file for a simple web application.
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: node-web-app
+  labels:
+    app: node-web-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: node-web-app
+  template:
+    metadata:
+      labels:
+        app: node-web-app
+    spec:
+      containers:
+        - name: node-web-app
+          image: <docker-user-name>/node-web-app
+          ports:
+            - containerPort: 8080
