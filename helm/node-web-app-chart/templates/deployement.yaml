@@ -17,6 +17,6 @@ spec:
     spec:
       containers:
         - name: node-web-app
-          image: anurup13/node-web-app
+          image: anurup13/node-web-app:{{ .Values.image.tag }}
           ports:
             - containerPort: 8080

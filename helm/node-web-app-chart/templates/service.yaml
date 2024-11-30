@@ -1,15 +1,15 @@
+# Service for the application
 apiVersion: v1
 kind: Service
 metadata:
-  name: {{ include "node-web-app-chart.fullname" . }}
+  name: node-web-app
   labels:
-    {{- include "node-web-app-chart.labels" . | nindent 4 }}
+    app: node-web-app
 spec:
-  type: {{ .Values.service.type }}
   ports:
-    - port: {{ .Values.service.port }}
-      targetPort: http
+    - port: 80
+      targetPort: 8080
       protocol: TCP
-      name: http
   selector:
-    {{- include "node-web-app-chart.selectorLabels" . | nindent 4 }}
+    app: node-web-app
+  type: ClusterIP

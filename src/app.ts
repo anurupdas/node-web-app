@@ -1,11 +1,13 @@
 import express, { Request, Response } from "express";
+import dotenv from "dotenv";
 
+dotenv.config();
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT;
 
 app.get("/", (req: Request, res: Response) => {
   res.send(
-    "Hello, World! Welcome to the Node.js CI/CD pipeline with Docker and TypeScript.Test#1"
+    "Hello, World! Welcome to the Node.js CI/CD pipeline with Docker and TypeScript.Test #2"
   );
 });
 
