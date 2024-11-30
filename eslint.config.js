@@ -1,25 +1,37 @@
-import { ESLint } from "eslint";
-import typescriptParser from "@typescript-eslint/parser";
-import typescriptPlugin from "@typescript-eslint/eslint-plugin";
+const eslintPlugin = require("@typescript-eslint/eslint-plugin");
+const tsParser = require("@typescript-eslint/parser");
 
-export default [
+module.exports = [
   {
-    ignores: ["node_modules/**"],
-  },
-  {
-    files: ["src/**/*.ts"],
+    files: ["**/*.ts"],
     languageOptions: {
-      parser: typescriptParser,
+      parser: tsParser,
       parserOptions: {
-        project: "./tsconfig.json",
+        ecmaVersion: 2020,
+        sourceType: "module",
+        tsconfigRootDir: process.cwd(),
+        project: ["./tsconfig.json"],
       },
     },
     plugins: {
-      "@typescript-eslint": typescriptPlugin,
+      "@typescript-eslint": eslintPlugin,
+    },
+    rules: {
+      "@typescript-eslint/no-unused-vars": "warn",
+      "@typescript-eslint/explicit-function-return-type": "off",
+      semi: ["error", "always"],
+      quotes: ["error", "double"],
+    },
+  },
+  {
+    files: ["**/*.js"],
+    languageOptions: {
+      ecmaVersion: 2020,
+      sourceType: "script",
     },
     rules: {
       "no-unused-vars": "warn",
-      "no-console": "off",
+      "no-undef": "warn",
     },
   },
 ];
