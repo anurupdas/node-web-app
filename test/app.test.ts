@@ -6,7 +6,7 @@ describe("GET /", () => {
     const response = await request(app).get("/");
     expect(response.statusCode).toBe(200);
     expect(response.text).toBe(
-      "Hello, World! Welcome to the Node.js CI/CD pipeline with Docker, TypeScript and Kubernetes."
+      "Hello, World! Welcome to the Node.js CI/CD pipeline with Docker, Kubernetes and Argo CD."
     );
   });
 });

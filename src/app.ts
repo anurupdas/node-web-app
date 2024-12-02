@@ -7,7 +7,7 @@ const PORT = process.env.PORT || 8080;
 
 app.get("/", (req: Request, res: Response) => {
   res.send(
-    "Hello, World! Welcome to the Node.js CI/CD pipeline with Docker, TypeScript and Kubernetes."
+    "Hello, World! Welcome to the Node.js CI/CD pipeline with Docker, Kubernetes and Argo CD."
   );
 });
 
