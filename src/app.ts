@@ -7,10 +7,12 @@ const PORT = process.env.PORT || 8080;
 
 app.get("/", (req: Request, res: Response) => {
   res.send(
-    "Hello, World! Welcome to the Node.js CI/CD pipeline with Docker and TypeScript.Test #3"
+    "Hello, World! Welcome to the Node.js CI/CD pipeline with Docker, TypeScript and Kubernetes."
   );
 });
 
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
 });
+
+export default app;
