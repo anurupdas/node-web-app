@@ -8,7 +8,7 @@ image:
   repository: anurup13/node-web-app
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "12099747122"
+  tag: "12104768355"
 
 ingress:
   enabled: false
