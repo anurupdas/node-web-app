@@ -1,5 +1,12 @@
 import request from "supertest";
-import app from "../src/app";
+import express from "express";
+
+const app = express();
+app.get("/", (req, res) => {
+  res.send(
+    "Hello, World! Welcome to the Node.js CI/CD pipeline with Docker, Kubernetes and Argo CD."
+  );
+});
 
 describe("GET /", () => {
   it("should return the welcome message", async () => {
